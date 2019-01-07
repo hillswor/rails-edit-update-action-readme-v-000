@@ -1,5 +1,3 @@
-require 'pry'
-
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
@@ -26,9 +24,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    binding.pry
-    @article = Article.find(params[:id])
-    @article.update(title: params[:title], description: params[:description])
-    redirect_to article_path(@article)
+    raise params.inspect
   end
 end
